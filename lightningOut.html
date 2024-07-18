@@ -1,0 +1,28 @@
+<html>
+    <script src="https://rockymountaineer--sitfull.sandbox.my.site.com/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true"></div>
+
+    <script>
+        const appName = 'c:lightningOutApp';
+        const componentName = 'c:testLightningOut';
+        const lightningEndpoint = 'https://rockymountaineer--sitfull.sandbox.my.site.com';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {};
+
+        $Lightning.use(
+            appName,
+            function () {
+              $Lightning.createComponent(
+                  componentName,
+                  componentAttributes,
+                  targetElement,
+                  function(cmp) {
+                      console.log('created!');
+                  }
+              );
+            },
+            lightningEndpoint
+        );
+    </script>
+</html>
